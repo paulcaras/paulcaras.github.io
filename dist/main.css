@@ -1,0 +1,129 @@
+@font-face {
+	font-family: "Segoe UI";
+	src: url('../fnt/segoeui.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Segoe UI Light";
+	src: url('../fnt/segoeuil.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Bauhaus 93";
+	src: url('../fnt/BAUHS93.TTF') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:100%; background: transparent; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+nav ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+	ins { background-color:#ff9; color:#000; text-decoration:none; }
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+table { border-collapse:collapse; border-spacing:0; }
+	hr { display:block; height:1px; border:0; border-top:1px solid #cccccc; margin:1em 0; padding:0; }
+input, select { vertical-align:middle; }
+::-webkit-scrollbar { display: none; }
+
+
+body { line-height: 1; margin: 0; padding: 0; font-size: 14px; font-family: "Consolas"; color: #000; background: #f8f8f8; height: 100vh; width: 100%; position: relative; overflow-y: hidden; }
+input, button, select { font-family: "Consolas"; }
+a { text-decoration: none; color: #D81B60; }
+a:link, a:active { text-decoration: none }
+a:visited { text-decoration: none; }
+
+* { box-sizing: border-box; }
+
+
+/** CSS Vowels **/
+.plane-panel { background-color: #fff; margin: 32px 24px; padding: 24px 16px; border: 1px solid #f0f0f0; }
+
+.plane-table { margin: 32px 24px; }
+.plane-table > .head { background-color: #f5f5dc; padding: 16px 16px; text-transform: uppercase; font-size: 12px; font-family: "Consolas"; }
+.plane-table > .list { background-color: #fff;  padding: 24px 16px; border: 1px solid #f0f0f0; }
+.plane-table > .list table { width: 100%; font-size: 12px; }
+.plane-table > .list table th { text-align: left; border: 1px solid #f0f0f0; padding: 7px 8px; background-color: #fbfbfb; }
+.plane-table > .list table td { text-align: left; border: 1px solid #f0f0f0; padding: 7px 8px; }
+.plane-table > .page { background-color: #f0f0f0; padding: 8px 16px; display: grid; grid-template-columns: 70% 30% }
+.plane-table > .page button { background-color: #fff; padding: 7px 8px; font-size: 12px; font-family: "Consolas"; border: 1px solid #f0f0f0; }
+.plane-table > .page .pl {}
+.plane-table > .page .pr { text-align: right; }
+
+.no-margin { margin: 0; }
+.margin-t32 { margin-top: 32px; }
+.margin-t20 { margin-top: 20px; }
+.margin-t16 { margin-top: 16px; }
+.margin-t12 { margin-top: 12px; }
+.margin-t8 { margin-top: 8px; }
+.margin-t4 { margin-top: 4px; }
+.margin-b32 { margin-bottom: 32px; }
+.margin-b20 { margin-bottom: 20px; }
+.margin-b16 { margin-bottom: 16px; }
+.margin-b12 { margin-bottom: 12px; }
+.margin-b8 { margin-bottom: 8px; }
+.margin-b4 { margin-bottom: 4px; }
+.margin-l32 { margin-left: 32px; }
+.margin-l20 { margin-left: 20px; }
+.margin-l16 { margin-left: 16px; }
+.margin-l12 { margin-left: 12px; }
+.margin-l8 { margin-left: 8px; }
+.margin-l4 { margin-left: 4px; }
+.margin-r32 { margin-right: 32px; }
+.margin-r20 { margin-right: 20px; }
+.margin-r16 { margin-right: 16px; }
+.margin-r12 { margin-right: 12px; }
+.margin-r8 { margin-right: 8px; }
+.margin-r4 { margin-right: 4px; }
+.margin-32 { margin: 32px; }
+.margin-20 { margin: 20px; }
+.margin-16 { margin: 16px; }
+.margin-12 { margin: 12px; }
+.margin-8 { margin: 8px; }
+.margin-4 { margin: 4px; }
+
+.no-padding { padding: 0; }
+.padding-t32 { padding-top: 32px; }
+.padding-t20 { padding-top: 20px; }
+.padding-t16 { padding-top: 16px; }
+.padding-t12 { padding-top: 12px; }
+.padding-t8 { padding-top: 8px; }
+.padding-t4 { padding-top: 4px; }
+.padding-b32 { padding-bottom: 32px; }
+.padding-b20 { padding-bottom: 20px; }
+.padding-b16 { padding-bottom: 16px; }
+.padding-b12 { padding-bottom: 12px; }
+.padding-b8 { padding-bottom: 8px; }
+.padding-b4 { padding-bottom: 4px; }
+.padding-l32 { padding-left: 32px; }
+.padding-l20 { padding-left: 20px; }
+.padding-l16 { padding-left: 16px; }
+.padding-l12 { padding-left: 12px; }
+.padding-l8 { padding-left: 8px; }
+.padding-l4 { padding-left: 4px; }
+.padding-r32 { padding-right: 32px; }
+.padding-r20 { padding-right: 20px; }
+.padding-r16 { padding-right: 16px; }
+.padding-r12 { padding-right: 12px; }
+.padding-r8 { padding-right: 8px; }
+.padding-r4 { padding-right: 4px; }
+.padding-32 { padding: 32px; }
+.padding-20 { padding: 20px; }
+.padding-16 { padding: 16px; }
+.padding-12 { padding: 12px; }
+.padding-8 { padding: 8px; }
+.padding-4 { padding: 4px; }
+
+.bl-shadow { box-shadow: 8px 8px 20px #f0f0f0; }
+.no-shadow { box-shadow: none }
+
+.cmp-help {}
+table.cmp-help th { font-weight: normal }
