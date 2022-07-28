@@ -86,6 +86,7 @@ input::placeholder { color: #606060 }
 .m-4l { margin-left: 4px }
 .m-4r { margin-right: 4px }
 
-
-
 .fa-spin { animation-duration: 8s; }
+.blink { animation: 1s linear infinite condemned_blink_effect; }
+
+@keyframes condemned_blink_effect { 0% { visibility: hidden; } 50% { visibility: hidden; } 100% { visibility: visible; } }
