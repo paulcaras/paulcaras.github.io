@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta charset="UTF-8" />
+        <title>PAULCARAS</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+        />
+        <meta name="rating" content="general" />
+        <meta name="author" content="paulcaras" />
+        <meta name="distribution" content="global" />
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+        <style>
+            .lightning-effect-svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+            }
+
+            .lightning-effect-svg .lightning-path {
+                stroke: #fff;
+                stroke-width: 1;
+                stroke-linecap: round;
+                opacity: 0.3;
+                fill: none;
+                filter: url(#glow);
+                transition: opacity 0.2s ease;
+            }
+        </style>
+        <script>
+            document.addEventListener('contextmenu', (event) => event.preventDefault());
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap"
+            rel="stylesheet"
+        />
+      <script type="module" crossorigin src="/assets/index.c44fed7b.js"></script>
+      <link rel="stylesheet" href="/assets/index.15cf65e3.css">
+    </head>
+    <body>
+        <div id="app"></div>
+        <svg class="lightning-effect-svg">
+            <defs>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow
+                        dx="0"
+                        dy="0"
+                        stdDeviation="10"
+                        flood-color="#111111"
+                        flood-opacity="0.6"
+                    />
+                </filter>
+            </defs>
+        </svg>
+        
+        <script>
+            const svg = document.querySelector('.lightning-effect-svg');
+
+            function createLightning() {
+                const startX = Math.random() * window.innerWidth;
+                const startY = 0;
+                const maxSegments = 12;
+                const maxOffsetX = 15;
+                const segmentLength = 25;
+
+                function generateBolt(x, y) {
+                    let path = `M ${x} ${y}`;
+                    let currX = x;
+                    let currY = y;
+
+                    for (let i = 0; i < maxSegments; i++) {
+                        const nextX =
+                            currX + (Math.random() * maxOffsetX - maxOffsetX / 2);
+                        const nextY = currY + segmentLength;
+                        path += ` L ${nextX} ${nextY}`;
+                        currX = nextX;
+                        currY = nextY;
+
+                        if (Math.random() < 0.2) {
+                            const branchLength = Math.random() * 20 + 10;
+                            const branchX = currX + (Math.random() * 20 - 10);
+                            const branchY = currY + branchLength;
+                            path += ` L ${branchX} ${branchY}`;
+                        }
+                    }
+                    return path;
+                }
+
+                const lightningPath = document.createElementNS(
+                    'http://www.w3.org/2000/svg',
+                    'path'
+                );
+                lightningPath.setAttribute('d', generateBolt(startX, startY));
+                lightningPath.classList.add('lightning-path');
+
+                svg.appendChild(lightningPath);
+
+                setTimeout(() => {
+                    lightningPath.style.opacity = 1;
+                    document.body.style.background = '#e8eced';
+                }, 10);
+
+                setTimeout(() => {
+                    lightningPath.style.opacity = 0;
+                    document.body.style.background = '#ecf0f1';
+                }, 1010);
+
+                setTimeout(() => lightningPath.remove(), 1200);
+            }
+
+            setInterval(() => {
+                createLightning();
+            }, 3000 + Math.random() * 1000);
+        </script>
+    </body>
+</html>
