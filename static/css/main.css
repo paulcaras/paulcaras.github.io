@@ -194,3 +194,21 @@ a:visited {
 * {
     box-sizing: border-box;
 }
+
+.lightning-effect-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.lightning-effect-svg .lightning-path {
+    stroke: #fff;
+    stroke-width: 1;
+    stroke-linecap: round;
+    opacity: 0.3;
+    fill: none;
+    filter: url(#glow);
+    transition: opacity 0.2s ease;
+}
